@@ -1,10 +1,17 @@
-import styles from './MenuPage.module.css'
+import Card from "../modules/Card";
+import styles from "./MenuPage.module.css";
 
-function MenuPage({data}) {
-    console.log(data);
+function MenuPage({ data }) {
   return (
-    <div>MenuPage</div>
-  )
+    <div className={styles.container}>
+      <h2>Menu</h2>
+      <div className={styles.subContainer}>
+        {data.map((food) => (
+          <Card key={food.id} {...food} />
+        ))}
+      </div>
+    </div>
+  );
 }
 
-export default MenuPage
+export default MenuPage;
